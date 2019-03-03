@@ -26,6 +26,12 @@ h1 {
   font-size: 16px;
 }
 
+.contact-me {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 .title {
   display: flex;
   flex-direction: column;
@@ -42,5 +48,9 @@ h1 {
     text-align: left;
     line-height: 32px;
     font-size: 20px;
+  }
+
+  .contact-me {
+    justify-content: space-between;
   }
 }
