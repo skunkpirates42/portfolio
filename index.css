@@ -3,10 +3,44 @@ body {
 }
 
 header {
-  background-color: #95B0B4;
+  background-color: #5EB7C2;
   color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 h1 {
   margin: 0;
+}
+
+.about {
+  display: flex;
+  max-width: 450px;
+}
+.about p{
+  text-align: center;
+  line-height: 20px;
+  font-size: 16px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .about p {
+    text-align: left;
+    line-height: 32px;
+    font-size: 20px;
+  }
 }
