@@ -27,7 +27,7 @@ section:nth-child(even) {
   background-color: #ddd;
 }
 
-address {
+.address {
   width: 80%;
   display: flex;
   justify-content: space-around;
@@ -70,6 +70,7 @@ footer {
 
 .get-in-touch {
   margin-bottom: 25px;
+  font-size: 22px;
 }
 
 .title {
