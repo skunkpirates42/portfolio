@@ -27,7 +27,17 @@ section:nth-child(even) {
   background-color: #ddd;
 }
 
+address {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  align-items: space-around;
+}
+
 footer {
+  background-color: #5EB7C2;
+  color: rgb(245, 245, 245);
   padding: 12px;
   text-align: center;
 }
@@ -36,7 +46,9 @@ footer {
 .about {
   display: flex;
   max-width: 450px;
+  padding: 8px 16px;
 }
+
 .about p{
   text-align: center;
   line-height: 20px;
@@ -47,6 +59,17 @@ footer {
   width: 100%;
   display: flex;
   justify-content: space-around;
+}
+
+.contact-me-footer {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.get-in-touch {
+  margin-bottom: 25px;
 }
 
 .title {
@@ -68,6 +91,16 @@ footer {
   }
 
   .contact-me {
+    justify-content: space-between;
+  }
+
+  .contact-me-footer {
+    width: 25%;
+    margin: 0 auto 20px auto;
+  }
+
+  .address {
+    display: flex;
     justify-content: space-between;
   }
 }
