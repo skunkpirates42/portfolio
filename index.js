@@ -1,3 +1,3 @@
-/* global $ */
-
-$('window').on('load', console.log('hi'));
+const year = new Date().getFullYear();
+const yearEl = document.querySelector('#js-year');
+yearEl.innerHTML = year;
