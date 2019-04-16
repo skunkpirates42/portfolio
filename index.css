@@ -14,6 +14,7 @@ header {
 }
 
 h1 {
+  font-size: 2.5em;
   margin: 0;
 }
 
@@ -52,7 +53,7 @@ footer {
 .about p{
   text-align: center;
   line-height: 20px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .contact-me {
