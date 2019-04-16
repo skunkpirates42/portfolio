@@ -21,11 +21,11 @@ h1 {
 section {
   min-height: 200px;
   padding: 6% 0;
-  background-color: #bbb;
+  background-color:#324B4E;
 }
 
 section:nth-child(even) {
-  background-color: #ddd;
+  background-color:#95B0B4;
 }
 
 .address {
