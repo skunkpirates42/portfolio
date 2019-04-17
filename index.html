@@ -13,6 +13,13 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+  <nav class="nav">
+    <ul class="nav-links">
+      <li><a class="nav-link" href="#projects">Projects</a></li>
+      <li><a class="nav-link" href="#resume">Resume</a></li>
+      <li><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
   <header role="banner">
     <div class="title">
       <h1>Peter Ramos</h1>
@@ -38,7 +45,7 @@
   <hr />
   <main role="main">
     <div class="sub-header">
-      <h2 class="project-header">Projects</h2>
+      <h2 id="projects" class="project-header">Projects</h2>
       <h3>A small sample of current and past projects</h3>
     </div>
     <section>
@@ -125,7 +132,7 @@
     </section>
 
     <section class="resume">
-        <h2 class="resume-header">Check out my resume</h2>
+        <h2 id="resume" class="resume-header">Check out my resume</h2>
         <div>
           <a aria-label="Peter Ramos resume" href="./assets/Peter Ramos Resume.pdf" target="_blank">
             <img class="resume-img" src="./assets/screenshots/resume-min.png" alt="Peter Ramos resume">
@@ -133,7 +140,7 @@
         </div>
     </section>
   </main>
-  <footer role="contentinfo">
+  <footer id="contact" role="contentinfo">
     <div class="contact-me-footer">
       <span class="get-in-touch">Get in touch with me</span>
       <address class="address">

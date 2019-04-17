@@ -38,7 +38,7 @@ section {
 
 a {
   text-decoration: none;
-  color: rgba(245, 245, 245);
+  color: inherit;
 }
 
 i {
@@ -72,6 +72,29 @@ footer {
   color: #122132;
   padding: 12px;
   text-align: center;
+}
+/* Nav */
+.nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0;
+}
+
+.nav-link {
+  color: #122132;
+  transition: text-decoration 0.25 linear;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
 
 /* Header */
@@ -147,13 +170,14 @@ footer {
   width: 100%;
   min-height: 55px;
   background: rgba(255, 255, 255, 0.2);
-  transition: background-color 0.25s linear;
+  transition: all 0.25s linear;
   padding: 16px;
   text-align: center;
 }
 
 .info:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: underline;
 }
 
 .project-desc {
@@ -270,6 +294,11 @@ footer {
 
 @media (min-width: 1025px) {
   header {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .nav {
     max-width: 1600px;
     margin: 0 auto;
   }
