@@ -80,7 +80,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: rgba(18, 33, 50, 0.8);
+  color: rgba(18, 33, 50, 0.9);
 }
 
 .about {
