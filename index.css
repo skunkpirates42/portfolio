@@ -33,7 +33,6 @@ hr {
 
 section {
   min-height: 200px;
-  padding: 4% 1%;
   background-color:#324B4E;
 }
 
@@ -121,7 +120,7 @@ footer {
 .project {
   display: flex;
   flex-direction: column;
-  padding: 32px;
+  padding: 44px 32px;
 }
 
 .card {
@@ -175,6 +174,11 @@ footer {
 
 .desc-link:hover {
   opacity: 0.5;
+  transform: rotate(-10deg)
+}
+
+.desc-link.two:hover {
+  opacity: 0.5;
   transform: rotate(10deg)
 }
 
@@ -187,6 +191,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 4% 1%;
 }
 
 .resume-header {
@@ -264,9 +269,16 @@ footer {
 }
 
 @media (min-width: 1025px) {
+  header {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
   .project {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
   }
 }
