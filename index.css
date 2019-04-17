@@ -24,8 +24,27 @@ section {
   background-color:#324B4E;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(245, 245, 245);
+}
+
+i {
+  transition: all 0.25s linear;
+}
+
+i:hover {
+  background-color: rgba(255, 255, 255, 0.5); 
+  transform: scale(1.2);
+}
+
+i:focus {
+  background-color: rgba(255, 255, 255, 0.5); 
+  transform: scale(1.2);
+}
+
 section:nth-child(even) {
-  background-color:#95B0B4;
+  background-color:#064F55;
 }
 
 .address {
@@ -78,10 +97,51 @@ footer {
 .title {
   display: flex;
   flex-direction: column;
-  justify-content: center
+  justify-content: center;
 }
 
-@media (min-width: 768px) {
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  border: 1px solid rgb(245, 245, 245);
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.screen-shot {
+  height: 250px;
+  width: 100%;
+  border-bottom: 1px solid rgb(245, 245, 245);
+  
+}
+
+.project-desc {
+  color: rgb(245, 245, 245);
+  max-width: 350px;
+  align-self: center;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.info {
+  width: 100%;
+  min-height: 55px;
+  background: rgba(255, 255, 255, 0.25);
+  transition: background-color 0.25s linear;
+}
+
+.info:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 769px) {
   header {
     flex-direction: row;
     text-align: left;
@@ -105,5 +165,17 @@ footer {
   .address {
     display: flex;
     justify-content: space-between;
+  }
+
+  .project {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .project-desc {
+    max-width: 450px;
+  }
+  .card {
+    margin: 0;
   }
 }
