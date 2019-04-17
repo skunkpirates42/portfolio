@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 18px;
@@ -110,6 +114,11 @@ footer {
   margin: 0 auto;
 }
 
+.screen-shot.palavras {
+  height: 400px;
+  max-width: 275px;
+}
+
 .project {
   display: flex;
   flex-direction: column;
@@ -136,6 +145,7 @@ footer {
   min-height: 55px;
   background: rgba(255, 255, 255, 0.25);
   transition: background-color 0.25s linear;
+  padding: 16px;
 }
 
 .info:hover {
