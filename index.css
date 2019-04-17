@@ -70,7 +70,7 @@ section:nth-child(even) {
 
 footer {
   background-color: #5EB7C2;
-  color: darkslategrey;
+  color: #122132;
   padding: 12px;
   text-align: center;
 }
@@ -80,12 +80,12 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: darkslategray;
+  color: #122132;
 }
 
 .about {
   display: flex;
-  color: darkslategray;
+  color: #122132;
   max-width: 450px;
   padding: 8px 16px;
 }
@@ -112,7 +112,7 @@ footer {
 
 .project-header {
   margin: 0;
-  color: darkslategrey;
+  color: #122132;
 }
 
 .project {
