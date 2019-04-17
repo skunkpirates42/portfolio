@@ -6,11 +6,12 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 18px;
   background-color: #5EB7C2;
+  color: rgb(245, 245, 245);
 }
 
 header {
   background-color: #5EB7C2;
-  color: rgb(245, 245, 245);
+  
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -27,10 +28,8 @@ h1 {
 hr {
   margin: 0 auto;
   max-width: 1000px;
-  color: rgb(245, 245, 245);
-  background-color: #324B4E;
+  
 }
-
 
 section {
   min-height: 200px;
@@ -40,7 +39,7 @@ section {
 
 a {
   text-decoration: none;
-  color: rgb(245, 245, 245);
+  color: rgba(245, 245, 245);
 }
 
 i {
@@ -71,11 +70,17 @@ section:nth-child(even) {
 
 footer {
   background-color: #5EB7C2;
-  color: rgb(245, 245, 245);
+  
   padding: 12px;
   text-align: center;
 }
 
+/* Header */
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .about {
   display: flex;
@@ -96,26 +101,23 @@ footer {
   margin-bottom: 20px;
 }
 
+/* Projects */
+.sub-header {
+  text-align: center;
+  padding: 16px;
+  
+  background-color:#5EB7C2;
+}
+
 .project-header {
   margin: 0;
 }
 
-.contact-me-footer {
-  height: 100px;
+.project {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-}
-
-.get-in-touch {
-  margin-bottom: 25px;
-  font-size: 22px;
-}
-
-.title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-flow: row wrap;
+  padding: 16px;
 }
 
 .card {
@@ -127,31 +129,15 @@ footer {
   margin: 0 auto;
 }
 
-.screen-shot.palavras {
-  height: 400px;
-  max-width: 275px;
-}
-
-.project {
-  display: flex;
-  flex-direction: column;
-  flex-flow: row wrap;
-  padding: 16px;
-}
-
 .screen-shot {
   height: 250px;
   width: 100%;
   border-bottom: 1px solid rgb(245, 245, 245);
-  
 }
 
-.project-desc {
-  color: rgb(245, 245, 245);
-  max-width: 350px;
-  align-self: center;
-  font-size: 20px;
-  line-height: 1.5;
+.screen-shot.palavras {
+  height: 400px;
+  max-width: 275px;
 }
 
 .info {
@@ -167,18 +153,40 @@ footer {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.sub-header {
-  text-align: center;
-  padding: 16px;
-  color: rgb(245, 245, 245);
-  background-color:#5EB7C2;
-}
+.project-desc {
+  
+  max-width: 350px;
+  align-self: center;
+  font-size: 20px;
+  line-height: 1.5;
+}  
 
 .links {
   display: flex;
   justify-content: space-between;
 }
 
+/* Resume */
+.resume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Footer */
+.contact-me-footer {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.get-in-touch {
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+/* Breakpoints */
 @media (min-width: 769px) {
   header {
     flex-direction: row;
