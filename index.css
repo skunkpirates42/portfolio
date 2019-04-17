@@ -5,6 +5,7 @@
 body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 18px;
+  background-color: #5EB7C2;
 }
 
 header {
@@ -22,6 +23,14 @@ h1 {
   font-size: 2.5em;
   margin: 0;
 }
+
+hr {
+  margin: 0 auto;
+  max-width: 1000px;
+  color: rgb(245, 245, 245);
+  background-color: #324B4E;
+}
+
 
 section {
   min-height: 200px;
@@ -87,6 +96,10 @@ footer {
   margin-bottom: 20px;
 }
 
+.project-header {
+  margin: 0;
+}
+
 .contact-me-footer {
   height: 100px;
   display: flex;
@@ -122,6 +135,7 @@ footer {
 .project {
   display: flex;
   flex-direction: column;
+  flex-flow: row wrap;
   padding: 16px;
 }
 
@@ -146,10 +160,23 @@ footer {
   background: rgba(255, 255, 255, 0.25);
   transition: background-color 0.25s linear;
   padding: 16px;
+  text-align: center;
 }
 
 .info:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sub-header {
+  text-align: center;
+  padding: 16px;
+  color: rgb(245, 245, 245);
+  background-color:#5EB7C2;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (min-width: 769px) {
