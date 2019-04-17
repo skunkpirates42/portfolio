@@ -11,7 +11,7 @@ body {
 
 header {
   background-color: #5EB7C2;
-  
+  margin-top: 20px;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -147,7 +147,7 @@ footer {
 .info {
   width: 100%;
   min-height: 55px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.2);
   transition: background-color 0.25s linear;
   padding: 16px;
   text-align: center;
@@ -169,6 +169,10 @@ footer {
   justify-content: space-between;
 }
 
+.tech-stack {
+  align-self: center;
+}
+
 /* Resume */
 .resume {
   display: flex;
@@ -188,7 +192,7 @@ footer {
 }
 
 .resume-img:hover {
-  opacity: 0.4;
+  opacity: 0.6;
 } 
 
 /* Footer */
@@ -210,6 +214,12 @@ footer {
     flex-direction: row;
     text-align: left;
   }
+
+  .screen-shot.palavras {
+    height: auto;
+    width: 100%;
+  }
+  
 
   .title {
     text-align: center;
@@ -235,15 +245,19 @@ footer {
     justify-content: space-between;
   }
 
-  .project {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
   .project-desc {
     max-width: 450px;
   }
   .card {
+    align-self: center;
     margin: 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .project {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
 }
