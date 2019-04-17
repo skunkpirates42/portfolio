@@ -169,6 +169,15 @@ footer {
   justify-content: space-between;
 }
 
+.desc-link {
+  transition: all 0.25s linear;
+}
+
+.desc-link:hover {
+  opacity: 0.5;
+  transform: rotate(10deg)
+}
+
 .tech-stack {
   align-self: center;
 }
