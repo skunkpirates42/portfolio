@@ -298,6 +298,13 @@ footer {
     margin: 0 auto;
   }
 
+  .sub-header {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .nav {
     max-width: 1600px;
     margin: 0 auto;
