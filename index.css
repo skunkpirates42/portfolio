@@ -223,6 +223,11 @@ footer {
   margin-bottom: 30px;
 }
 
+.resume-img-container {
+  max-height: 792px;
+  max-width: 572px;
+
+}
 .resume-img{
   border-radius: 5px;
   height: auto;
