@@ -91,7 +91,9 @@ study frontmatter are plain data; components take props and render.
 Single page, anchored nav, ordered by what a skimming reviewer needs first.
 
 1. **Hero** — Name, "Senior Full-Stack Engineer", 7+ years, one line of
-   positioning. Resume / GitHub / LinkedIn / email. Availability status.
+   positioning. Resume / GitHub / LinkedIn / email. Availability is explicit and
+   prominent: "Available for senior frontend / full-stack roles." Deliberate
+   choice for an active hunt; revisit once a role is signed.
 2. **Impact strip** — 3-4 hard numbers pulled from the resume: 20,000+ merchants,
    $42B GMV platform, 100M subscribers, 7+ years. Not decorative; this is the
    section that answers "is this person senior".
@@ -107,9 +109,9 @@ Single page, anchored nav, ordered by what a skimming reviewer needs first.
    current differentiator and was specifically called out as such by a former
    manager reviewing the resume.
 6. **The story** — animated timeline, five chapters. See below.
-7. **Selected work** — `wc-predictions` plus one more, framed as recent side
-   work rather than portfolio pieces. Links go to specific repos, never to the
-   GitHub profile root.
+7. **Selected work** — three entries, framed as recent side work rather than
+   portfolio pieces. Links go to specific repos, never to the GitHub profile
+   root. See "Side projects" below.
 8. **Contact** — available now, resume PDF, email, GitHub, LinkedIn.
 
 ## The story section
@@ -183,6 +185,45 @@ Confirmed available (already captured, public Recharge marketing):
 
 Still needed: one Stay.AI customer portal image from stay.ai marketing.
 
+## Side projects
+
+Three entries, in descending order of evidentiary weight.
+
+**stock-signal** — rule-based intraday trading signal engine in Python. Six
+indicator votes with consensus thresholding, backtest replaying real Alpaca IEX
+bars through the identical engine and exit logic as live, Flask dashboard,
+SQLite persistence, nine test modules.
+
+The centerpiece is the field report, not the repo: it documents a thin but real
+gross edge, a conviction-threshold sweep that *failed* and why (the votes are
+collinear), and an orthogonal relative-strength gate that clears the cost line.
+It labels the result "a strong lead, not yet a validated result" and carries an
+explicit not-investment-advice disclaimer.
+
+This is the section's strongest asset. Disproving your own hypothesis in writing
+and refusing to overclaim reads as engineering judgment, which is harder to
+demonstrate than a feature list.
+
+Currently local-only — not pushed to GitHub. Publishing it is a task in the
+implementation plan. Pre-push check already done: `.gitignore` covers `.env` and
+`*.db`, no secrets or database files tracked, config reads from environment.
+A full staged-content review still runs before the first push.
+
+**airbnb-research** — pnpm monorepo: Next.js 15 with Prisma/SQLite, a shared
+types package, and an MV3 Chrome extension built with Vite. Captures listing and
+review data, then runs Claude analysis asynchronously with the web UI polling for
+completion.
+
+Presented as a written description with **no repo link, repository stays
+private**. It works by intercepting Airbnb's internal GraphQL API to capture
+their rotating persisted-query hash — technically the sharper piece of
+engineering, but publishing a scraper alongside a job application carries ToS and
+perception risk that outweighs the marginal credit. The architecture and the
+interceptor technique can be described in full without shipping the source.
+
+**wc-predictions** — public already, most recent public repo (Jul 2026).
+Lightest of the three; included because it is verifiable in one click.
+
 All images served locally from `public/`, not hotlinked. Cloudinary dependency
 is removed entirely.
 
@@ -208,16 +249,20 @@ is removed entirely.
 
 ## Open questions
 
-1. Colorado years — needed to place chapter 2 on the timeline.
-2. Second entry for Selected work alongside `wc-predictions`, if any.
-3. Availability wording for the hero. Recharge role ended Aug 2026; how
-   explicitly should the site say "available now"?
-4. Stay.AI portal image not yet captured.
+1. **Colorado years — still needed.** Required to place chapter 2 on the
+   timeline. Approximate span is sufficient. Only genuine blocker remaining;
+   everything else can proceed around it.
+2. Stay.AI portal image not yet captured. To be pulled from stay.ai marketing.
+
+Resolved since first draft: side project selection and publication strategy
+(see "Side projects"), and hero availability wording (explicit and prominent).
 
 ## Out of scope
 
 - Archiving the 2018-19 Thinkful repos on GitHub. Worth doing — a reviewer
   landing on the profile root currently sees `peter-node-shopping-list-v2` — but
   it is a GitHub account change, not a site change.
+- Making `airbnb-research` public. Explicitly decided against; see "Side
+  projects".
 - Cinematic scroll upgrade for the story section.
 - Any change to the resume PDF.
