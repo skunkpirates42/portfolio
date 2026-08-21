@@ -7,10 +7,10 @@
   --line: #E0DED7;
   --ink: #17181A;
   --muted: #5A5D63;
-  --faint: #8A8E96;
-  --accent: #7C5CD6;
+  --faint: #62666E;
+  --accent: #6F4FCC;
   --accent-soft: #9B80E3;
-  --accent-bg: rgba(124, 92, 214, 0.10);
+  --accent-bg: rgba(111, 79, 204, 0.10);
 }
 
 :root[data-theme="dark"] {
@@ -20,7 +20,7 @@
   --line: #2B303A;
   --ink: #E8EAEE;
   --muted: #9AA1AC;
-  --faint: #6D7480;
+  --faint: #8E96A2;
   --accent: #A78BFA;
   --accent-soft: #C4B5FD;
   --accent-bg: rgba(167, 139, 250, 0.12);
