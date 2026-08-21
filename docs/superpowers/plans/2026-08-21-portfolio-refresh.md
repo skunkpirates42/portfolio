@@ -351,7 +351,7 @@ body {
 
 - [ ] **Step 8: Build the theme toggle**
 
-Create `src/components/ThemeToggle.astro`. The inline script is duplicated logic from `theme.ts` on purpose — it must run before first paint and cannot wait for a module import, which is what prevents the flash of wrong theme.
+Create `src/components/ThemeToggle.astro`. This script does NOT resolve the theme — it reads whatever `data-theme` is already on the document and keeps the button label in sync. Theme resolution happens in a pre-paint inline script in `BaseLayout` (Task 3), which is the piece that duplicates `resolveTheme`'s logic because it must run before first paint and cannot wait for a module import. Until Task 3 lands, dark mode is unreachable on load; that is expected at this point in the build, not a defect in this task.
 
 ```astro
 <button
@@ -552,13 +552,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 In `astro.config.mjs`, add `site: "https://www.peterramos.dev"` to the config object. Canonical and OG URLs depend on it.
 
-- [ ] **Step 6: Verify the build and check the theme script shipped**
+- [ ] **Step 6: Close the toggle's screen-reader state gap**
+
+`ThemeToggle.astro` from Task 2 announces only a static "Toggle color theme"; its visible label lives in an `aria-hidden` span, so a screen-reader user cannot tell which theme is active. Add `aria-pressed` to the button and keep it in sync.
+
+In `src/components/ThemeToggle.astro`, add `aria-pressed="false"` to the button element, and inside `paint`, add:
+
+```javascript
+button?.setAttribute("aria-pressed", String(theme === "dark"));
+```
+
+- [ ] **Step 7: Verify the build and the theme wiring end to end**
 
 ```bash
 pnpm build && grep -c "prefers-color-scheme" dist/index.html
 ```
 
 Expected: build succeeds; grep returns at least `1` (the inline pre-paint script is present, not deferred).
+
+Then verify the behavior actually works, because Task 2 could not:
+
+1. Load the page with the OS set to dark. Expected: the page renders dark immediately, with no light flash.
+2. Click the toggle to light, reload. Expected: it stays light — the stored choice beats the OS preference.
+3. Clear `localStorage`, reload. Expected: it follows the OS preference again.
+
+Confirm all three by observation. If any fails, the pre-paint script and the toggle are out of sync — fix before committing.
 
 - [ ] **Step 7: Commit**
 
