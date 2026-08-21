@@ -4,16 +4,16 @@
 
 **Goal:** Replace the 2021 vanilla-HTML portfolio at peterramos.dev with an Astro site that presents Peter Ramos as the senior full-stack engineer he currently is, built for recruiters skimming during an active job hunt.
 
-**Architecture:** Astro 5 static site, single page with anchored sections, deployed to the existing Netlify site. Content lives as data and MDX, not markup: case studies are a content collection, story chapters are a typed array. Components are presentational and take props. Tailwind 4 via the Vite plugin, with a CSS custom property token layer so light and dark themes are one source of truth. React is not installed — nothing on this page needs it, and Astro's zero-JS default is the point.
+**Architecture:** Astro 7 static site, single page with anchored sections, deployed to the existing Netlify site. Content lives as data and MDX, not markup: case studies are a content collection, story chapters are a typed array. Components are presentational and take props. Tailwind 4 via the Vite plugin, with a CSS custom property token layer so light and dark themes are one source of truth. React is not installed — nothing on this page needs it, and Astro's zero-JS default is the point.
 
-**Tech Stack:** Astro 5, TypeScript, Tailwind CSS 4 (`@tailwindcss/vite`), MDX, Vitest, pnpm 10, Node 25, Netlify.
+**Tech Stack:** Astro 7, TypeScript, Tailwind CSS 4 (`@tailwindcss/vite`), MDX, Vitest, pnpm 10, Node 25, Netlify.
 
 **Spec:** `docs/superpowers/specs/2026-08-21-portfolio-refresh-design.md`
 
 ## Global Constraints
 
 - Package manager is **pnpm** (10.33.0 installed). Never npm or yarn.
-- Node 25.9.0 installed. Astro 5 requires Node 18.17.1+.
+- Node 25.9.0 installed. Installed stack is Astro 7.2.4, @astrojs/mdx 7.0.7, tailwindcss + @tailwindcss/vite 4.3.3 (verified in Task 1, not assumed).
 - Branch is `redesign/2026-refresh`. Never commit to `master`. Never push without being asked.
 - **Content source of truth is the resume** at `~/Downloads/Peter Ramos Resume 8:26.pdf` (2026-08-19). Where this plan and the resume disagree, the resume wins. Never invent an achievement, metric, employer, or date that is not on it.
 - Job titles verbatim: "Senior Frontend Software Engineer" (Recharge, May 2023 - Aug 2026), "Senior Full-Stack Software Engineer" (Stay.AI, Nov 2022 - May 2023), "Frontend Software Engineer" (Recharge, Feb 2021 - Oct 2022), "Software Developer" (Covetrus, Apr 2019 - Feb 2021).
@@ -816,8 +816,9 @@ Expected: FAIL — `ENOENT: no such file or directory, scandir 'src/content/case
 Create `src/content.config.ts`:
 
 ```typescript
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const caseStudies = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "./src/content/case-studies" }),
