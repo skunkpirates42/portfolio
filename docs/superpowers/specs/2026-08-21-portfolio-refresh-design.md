@@ -120,7 +120,7 @@ Five chapters, one continuous vertical spine:
 
 1. 2012 — B.Sc Jazz Studies, SUNY New Paltz. Senior project: picked the
    musicians, led rehearsals and promotion, played an hour-long set live.
-2. Colorado (dates TBD) — moved out to ski and mountain bike. Managed the
+2. 2013-2017, Colorado — moved out to ski and mountain bike. Managed the
    kitchen at a pizza / bar and grill while there. One chapter, not two.
 3. 2018 — Learned to code. Thinkful engineering immersion, Nov 2018.
 4. 2019 — Covetrus intern, converted to full-time after six weeks.
@@ -249,13 +249,21 @@ is removed entirely.
 
 ## Open questions
 
-1. **Colorado years — still needed.** Required to place chapter 2 on the
-   timeline. Approximate span is sufficient. Only genuine blocker remaining;
-   everything else can proceed around it.
-2. Stay.AI portal image not yet captured. To be pulled from stay.ai marketing.
+1. Stay.AI portal image not yet captured. To be pulled from stay.ai marketing
+   during implementation.
 
-Resolved since first draft: side project selection and publication strategy
-(see "Side projects"), and hero availability wording (explicit and prominent).
+Resolved since first draft: Colorado years (2013-2017), side project selection
+and publication strategy (see "Side projects"), and hero availability wording
+(explicit and prominent). No blockers remain.
+
+## Follow-up, tracked separately
+
+Verify whether `airbnb-research`'s data collection actually conflicts with
+Airbnb's current Terms of Service, and if so whether a compliant version is
+possible via their official API or a partner program. If no compliant path
+exists, the tool stays personal-use-only and the site describes it without
+linking source — which is what this build does regardless. This investigation
+does not gate the portfolio work.
 
 ## Out of scope
 
