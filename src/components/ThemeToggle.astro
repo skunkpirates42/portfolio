@@ -3,6 +3,7 @@
   type="button"
   class="rounded-md border border-line bg-surface px-3 py-2 text-sm text-muted hover:text-ink"
   aria-label="Toggle color theme"
+  aria-pressed="false"
 >
   <span aria-hidden="true" data-theme-icon></span>
 </button>
@@ -14,6 +15,7 @@
   const paint = (theme: string) => {
     document.documentElement.dataset.theme = theme;
     if (icon) icon.textContent = theme === "dark" ? "Light" : "Dark";
+    button?.setAttribute("aria-pressed", String(theme === "dark"));
   };
 
   paint(document.documentElement.dataset.theme ?? "light");
