@@ -1,23 +1,20 @@
 {
   "name": "peter-portfolio",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "normalize.css": "^8.0.1"
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skunkpirates42/portfolio.git"
-  },
-  "author": "Peter Ramos",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/skunkpirates42/portfolio/issues"
-  },
-  "homepage": "https://github.com/skunkpirates42/portfolio#readme"
+  "dependencies": {
+    "@astrojs/mdx": "^7.0.7",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.2.4",
+    "tailwindcss": "^4.3.3"
+  }
 }
