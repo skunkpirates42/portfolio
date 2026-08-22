@@ -25,7 +25,8 @@
 - Accessibility: WCAG AA contrast in both themes, one `h1`, semantic landmarks, visible focus states, real alt text on every image.
 - No emojis anywhere in site copy.
 - **No web fonts.** The old site loaded Nunito Sans and Roboto Slab from Google Fonts and all of FontAwesome from a CDN. The rebuild uses Tailwind's default system font stacks and inline SVG for any icon. This is both a privacy and a performance decision, and it is what makes the Task 15 performance target reachable.
-- Do not modify the resume PDF. Do not touch `airbnb-research` or make it public.
+- **The resume PDF served by the site MUST be the current one** (`~/Downloads/Peter Ramos Resume 8:26.pdf`, dated 2026-08-19, md5 `5e756fb67e0c85d9573c55cc0f2a4d47`). The PDF that was sitting in the old repo at `assets/resume-min.pdf` (md5 `7c59329d5d3eadabf698cd63ecca6de6`) is the **2021** resume: it says "Software Developer, Recharge Payments, February 2021 - Present", has no Stay.AI role, and never mentions the analytics platform. Shipping it would contradict every claim on the page. Never edit the PDF's contents; replacing the stale file with the current file is required, not optional.
+- Do not touch `airbnb-research` or make it public.
 
 ## Testing strategy
 
