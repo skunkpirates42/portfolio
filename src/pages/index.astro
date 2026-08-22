@@ -2,6 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import ImpactStrip from "../components/ImpactStrip.astro";
+import CaseStudy from "../components/CaseStudy.astro";
+import { getCollection } from "astro:content";
+
+const caseStudies = (await getCollection("case-studies")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
 ---
 
 <BaseLayout
@@ -10,4 +16,8 @@ import ImpactStrip from "../components/ImpactStrip.astro";
 >
   <Hero />
   <ImpactStrip />
+  <section id="work" class="mx-auto max-w-5xl px-6 py-16">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-accent">Case studies</h2>
+    {caseStudies.map((entry) => <CaseStudy entry={entry} />)}
+  </section>
 </BaseLayout>
