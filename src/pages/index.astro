@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import ImpactStrip from "../components/ImpactStrip.astro";
 import CaseStudy from "../components/CaseStudy.astro";
+import AgenticSection from "../components/AgenticSection.astro";
 import { getCollection } from "astro:content";
 
 const caseStudies = (await getCollection("case-studies")).sort(
@@ -20,4 +21,5 @@ const caseStudies = (await getCollection("case-studies")).sort(
     <h2 class="text-sm font-semibold uppercase tracking-widest text-accent">Case studies</h2>
     {caseStudies.map((entry) => <CaseStudy entry={entry} />)}
   </section>
+  <AgenticSection />
 </BaseLayout>
