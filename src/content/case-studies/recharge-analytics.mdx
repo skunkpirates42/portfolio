@@ -7,4 +7,62 @@ stack: ["Vue", "TypeScript", "Nuxt", "GraphQL", "Snowflake"]
 order: 1
 ---
 
-Body written in Task 7.
+import ImageFrame from "../../components/ImageFrame.astro";
+
+Recharge merchants could see that revenue moved. They could not see why. Answering
+questions like which products drove churn, or how a cohort's retention compared to
+the rest of the category, meant exporting data and rebuilding it by hand in a
+spreadsheet.
+
+I led frontend development of the analytics platform that closed that gap: dashboards
+and drill-down reports surfacing business metrics that had previously been unavailable
+to more than 20,000 merchants.
+
+<ImageFrame
+  src="/images/case-studies/recharge-dashboard.png"
+  alt="Recharge analytics dashboard showing subscription recurring revenue with items, orders and average sales tiles above a stacked bar chart of checkout and subscription orders over time."
+  width={1222}
+  height={1226}
+  caption="Recurring revenue and order activity, from Recharge's public marketing site."
+/>
+
+#### Two generations of the same product
+
+I was the primary frontend engineer on the custom reports product across two distinct
+architectural generations.
+
+The first generation shipped canned reports: a fixed catalog where each report paired
+pre-selected metrics with pre-selected dimensions. It answered the most common questions
+quickly and proved the demand was real. Its limit was structural — every new question a
+merchant asked meant engineering built another report.
+
+The second generation inverted that. Instead of shipping reports, we shipped the
+building blocks: merchants compose their own metrics, dimensions, groupings and
+comparison windows, and the report is a saved configuration rather than a hardcoded
+view. The interesting frontend work was in the constraint layer, since not every metric
+is valid against every dimension, and a UI that lets you build an incoherent query
+produces a support ticket instead of an answer.
+
+<ImageFrame
+  src="/images/case-studies/recharge-custom-report.png"
+  alt="A custom Recharge report titled Subscription checkout order items, showing a report controls bar with date range, comparison period and monthly grouping, above a stacked bar chart broken out by product."
+  width={2054}
+  height={1022}
+  caption="A composed report: date range, comparison window and grouping are merchant-selected, not hardcoded."
+/>
+
+#### Working across the stack boundary
+
+None of this is a frontend-only problem. Report configurations become queries against a
+warehouse, and the shape of what the UI allows is bounded by what the data layer can
+answer at acceptable latency. I worked closely with backend and data engineers on where
+that line sat, which is why the constraint rules live in one shared definition rather
+than being reimplemented in the client.
+
+<ImageFrame
+  src="/images/case-studies/recharge-churn-benchmark.png"
+  alt="A Recharge churn benchmarking chart plotting a single store's active churn rate against 25th percentile, median and 75th percentile benchmarks, with an open tooltip showing values for June 2025."
+  width={1238}
+  height={656}
+  caption="Benchmarking a store against category percentiles, with drill-down on hover."
+/>
