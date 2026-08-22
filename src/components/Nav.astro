@@ -11,21 +11,23 @@ const links = [
 ---
 
 <header class="sticky top-0 z-40 border-b border-line bg-ground/85 backdrop-blur">
-  <nav class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4" aria-label="Primary">
-    <a href="#main" class="font-semibold tracking-tight">Peter Ramos</a>
-    <div class="flex items-center gap-1">
-      <ul class="hidden items-center gap-1 sm:flex">
-        {links.map((link) => (
-          <li>
+  <nav class="mx-auto flex max-w-5xl items-center gap-3 px-6 py-4" aria-label="Primary">
+    <a href="#main" class="hidden shrink-0 font-semibold tracking-tight sm:block">Peter Ramos</a>
+    <ul class="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto sm:justify-end">
+      {
+        links.map((link) => (
+          <li class="shrink-0">
             <a
               href={link.href}
-              class="rounded-md px-3 py-2 text-sm text-muted transition-colors hover:text-ink"
+              class="block rounded-md px-3 py-2 text-sm text-muted transition-colors hover:text-ink"
             >
               {link.label}
             </a>
           </li>
-        ))}
-      </ul>
+        ))
+      }
+    </ul>
+    <div class="shrink-0">
       <ThemeToggle />
     </div>
   </nav>
