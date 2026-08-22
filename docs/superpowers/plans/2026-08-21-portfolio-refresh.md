@@ -787,11 +787,13 @@ ls -la public/images/case-studies/
 
 Expected: three PNG files present.
 
-- [ ] **Step 2: Capture the Stay.AI portal image**
+- [ ] **Step 2: No Stay.AI image — skip this step**
 
-Open `https://www.stay.ai/` and find a marketing image of the customer portal. Save it as `public/images/case-studies/stay-ai-portal.png`.
+Resolved before implementation; nothing to do here. The Stay.AI case study is text-only.
 
-If no usable portal image exists on their marketing site, do not substitute anything else and do not use an internal screenshot. Instead, set `image: undefined` in the Stay.AI MDX frontmatter in Task 8 — that case study renders text-only. Note the outcome in the commit message.
+Peter confirms the portal on Stay.AI's site today is not what he built (he left May 2023; it has since been iterated or rewritten), so any current screenshot would credit him for someone else's work. Their only portal assets are animated GIFs, which cannot be paused under `prefers-reduced-motion`. The candidate named `Customer-experience.png` was downloaded and inspected: it shows the merchant-side WinbackEngine config screen, not the subscriber portal.
+
+Do not search for a replacement. Do not use an internal screenshot. Only the three Recharge images in Step 1 are used on this site.
 
 - [ ] **Step 3: Write the failing schema test**
 
@@ -1100,11 +1102,13 @@ Claude-Session: https://claude.ai/code/session_01Fq3vVm3nvyoG8pfbf5Hquh"
 
 - [ ] **Step 1: Write the body**
 
-Replace the placeholder body, keeping the Task 6 frontmatter. Include the `ImageFrame` block only if Step 2 of Task 6 produced `stay-ai-portal.png`; otherwise omit that block and the import entirely.
+Replace the placeholder body, keeping the Task 6 frontmatter.
+
+**This case study is text-only. Settled, do not revisit.** There is no `ImageFrame` here and no image import. Peter confirms the portal on Stay.AI's site today is not what he built — he left in May 2023 and it has since been iterated or rewritten, so any current screenshot would credit him for someone else's work. Do not go looking for a better image, and do not substitute a merchant-side screenshot: the asset named `Customer-experience.png` on their site shows the merchant WinbackEngine config screen, not the subscriber portal.
+
+The value here is the architecture and the decisions, which are his regardless of what the UI looks like now. The frontmatter's `period: "Nov 2022 - May 2023"` scopes the claim correctly and `CaseStudy.astro` renders it.
 
 ```mdx
-import ImageFrame from "../../components/ImageFrame.astro";
-
 The customer portal is where a subscriber actually lives: it is where they swap a
 product, skip a delivery, or cancel. For a subscription business it is the highest
 -leverage surface there is, because every interaction is a chance to retain or lose the
@@ -1124,12 +1128,6 @@ We used Zustand for client state, keeping the store deliberately small and coloc
 with the flows that own it, rather than one global object every component reaches into.
 Redis fronted the reads that would otherwise hit Postgres on every portal load, and
 Twilio handled the notification path.
-
-<ImageFrame
-  src="/images/case-studies/stay-ai-portal.png"
-  alt="Stay.AI customer portal marketing image showing the subscriber-facing subscription management interface."
-  caption="The customer portal, from Stay.AI's public marketing site."
-/>
 ```
 
 - [ ] **Step 2: Verify**
