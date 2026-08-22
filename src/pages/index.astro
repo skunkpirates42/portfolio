@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import ImpactStrip from "../components/ImpactStrip.astro";
 import CaseStudy from "../components/CaseStudy.astro";
 import AgenticSection from "../components/AgenticSection.astro";
+import StoryTimeline from "../components/StoryTimeline.astro";
 import { getCollection } from "astro:content";
 
 const caseStudies = (await getCollection("case-studies")).sort(
@@ -22,4 +23,5 @@ const caseStudies = (await getCollection("case-studies")).sort(
     {caseStudies.map((entry) => <CaseStudy entry={entry} />)}
   </section>
   <AgenticSection />
+  <StoryTimeline />
 </BaseLayout>
