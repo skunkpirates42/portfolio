@@ -1031,6 +1031,8 @@ to more than 20,000 merchants.
 <ImageFrame
   src="/images/case-studies/recharge-dashboard.png"
   alt="Recharge analytics dashboard showing subscription recurring revenue with items, orders and average sales tiles above a stacked bar chart of checkout and subscription orders over time."
+  width={1222}
+  height={1226}
   caption="Recurring revenue and order activity, from Recharge's public marketing site."
 />
 
@@ -1054,6 +1056,8 @@ produces a support ticket instead of an answer.
 <ImageFrame
   src="/images/case-studies/recharge-custom-report.png"
   alt="A custom Recharge report titled Subscription checkout order items, showing a report controls bar with date range, comparison period and monthly grouping, above a stacked bar chart broken out by product."
+  width={2054}
+  height={1022}
   caption="A composed report: date range, comparison window and grouping are merchant-selected, not hardcoded."
 />
 
@@ -1068,6 +1072,8 @@ than being reimplemented in the client.
 <ImageFrame
   src="/images/case-studies/recharge-churn-benchmark.png"
   alt="A Recharge churn benchmarking chart plotting a single store's active churn rate against 25th percentile, median and 75th percentile benchmarks, with an open tooltip showing values for June 2025."
+  width={1238}
+  height={656}
   caption="Benchmarking a store against category percentiles, with drill-down on hover."
 />
 ```
