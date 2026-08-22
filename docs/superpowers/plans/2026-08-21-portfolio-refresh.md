@@ -1117,9 +1117,9 @@ The value here is the architecture and the decisions, which are his regardless o
 
 ```mdx
 The customer portal is where a subscriber actually lives: it is where they swap a
-product, skip a delivery, or cancel. For a subscription business it is the highest
--leverage surface there is, because every interaction is a chance to retain or lose the
-relationship.
+product, skip a delivery, or cancel. For a subscription business it is the
+highest-leverage surface there is, because every interaction is a chance to retain or
+lose the relationship.
 
 I led the architectural design and development of the rebuild.
 
