@@ -715,7 +715,7 @@ const stats = [
   { figure: "7+ years", detail: "building product-facing features at scale" },
   { figure: "20,000+", detail: "merchants reached by the analytics surfaces I led" },
   { figure: "$42B", detail: "GMV flowing through the platform" },
-  { figure: "5+ years", detail: "in a remote, distributed engineering org" },
+  { figure: "5+ years", detail: "in remote, distributed engineering orgs" },
 ];
 ---
 
