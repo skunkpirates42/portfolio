@@ -866,7 +866,7 @@ title: "Merchant analytics platform"
 role: "Senior Frontend Software Engineer"
 period: "May 2023 - Aug 2026"
 summary: "Dashboards and drill-down reports surfacing business metrics previously unavailable to 20,000+ merchants."
-stack: ["Vue", "TypeScript", "Nuxt", "GraphQL", "Snowflake"]
+stack: ["React", "Remix", "Python", "REST", "Snowflake"]
 order: 1
 ---
 
