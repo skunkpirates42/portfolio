@@ -566,10 +566,10 @@ button?.setAttribute("aria-pressed", String(theme === "dark"));
 - [ ] **Step 7: Verify the build and the theme wiring end to end**
 
 ```bash
-pnpm build && grep -c "prefers-color-scheme" dist/index.html
+pnpm build && grep -o "prefers-color-scheme" dist/index.html | wc -l
 ```
 
-Expected: build succeeds; grep returns at least `1` (the inline pre-paint script is present, not deferred).
+Expected: build succeeds; the count is at least `1` (the inline pre-paint script is present, not deferred). Use `grep -o | wc -l` rather than `grep -c` — the built HTML is minified onto one line, so `grep -c` counts lines, not occurrences.
 
 Then verify the behavior actually works, because Task 2 could not:
 
@@ -1398,10 +1398,12 @@ In `src/pages/index.astro`, import `StoryTimeline` and place it after `AgenticSe
 - [ ] **Step 7: Verify**
 
 ```bash
-pnpm test && pnpm build && grep -c "data-chapter" dist/index.html
+pnpm test && pnpm build && grep -o "data-chapter" dist/index.html | wc -l
 ```
 
-Expected: tests pass; grep returns `5`.
+Expected: tests pass; the count is `5`.
+
+Note `grep -o | wc -l`, not `grep -c`. The built HTML is minified onto one line, so `grep -c` counts lines and would return `1` regardless of how many chapters rendered — a check that cannot fail.
 
 - [ ] **Step 8: Commit**
 
