@@ -7,4 +7,22 @@ stack: ["React", "Zustand", "Material UI", "Node", "Express", "Redis", "PostgreS
 order: 2
 ---
 
-Body written in Task 8.
+The customer portal is where a subscriber actually lives: it is where they swap a
+product, skip a delivery, or cancel. For a subscription business it is the highest
+-leverage surface there is, because every interaction is a chance to retain or lose the
+relationship.
+
+I led the architectural design and development of the rebuild.
+
+#### What the rebuild had to solve
+
+A portal is embedded in someone else's brand, so it has to be themeable without forking
+per merchant, and it has to stay responsive on the mid-range phones most subscribers
+actually use. State is the hard part: subscription mutations are asynchronous and
+frequently optimistic, and a subscriber who taps skip needs to see it take effect
+immediately without the UI drifting out of sync with the server.
+
+We used Zustand for client state, keeping the store deliberately small and colocated
+with the flows that own it, rather than one global object every component reaches into.
+Redis fronted the reads that would otherwise hit Postgres on every portal load, and
+Twilio handled the notification path.
