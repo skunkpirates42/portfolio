@@ -1812,7 +1812,23 @@ In `src/pages/index.astro`, import `Contact` and place it last, after `ResumeSec
 
 - [ ] **Step 3: Create the social card**
 
-Create a 1200x630 PNG at `public/og.png` reading "Peter Ramos" and "Senior Full-Stack Engineer" on the light-theme ground color `#FBFAF8`, with `#7C5CD6` accent. Any method is fine — an HTML page screenshotted at 1200x630, or an image tool. Requirements: exactly 1200x630, text legible at thumbnail size, under 500KB.
+Create a 1200x630 PNG at `public/og.png` reading "Peter Ramos" and "Senior Full-Stack Engineer" on the light-theme ground color `#FBFAF8`, with `#6F4FCC` accent. Any method is fine — an HTML page screenshotted at 1200x630, or an image tool. Requirements: exactly 1200x630, text legible at thumbnail size, under 500KB.
+
+- [ ] **Step 4: Create a favicon**
+
+Task 1 deleted the old site's `assets/favicon/favicon.ico` and nothing replaced it, so every page load currently requests a favicon that does not exist. This step closes that.
+
+Create `public/favicon.svg` — an SVG favicon, not an ICO. It scales to every size from one file and is well supported.
+
+Keep it simple and legible at 16x16: a "PR" monogram, or a single letterform, in the accent color `#6F4FCC` on a transparent or `#FBFAF8` ground. Do not attempt detail that disappears at small sizes.
+
+Then reference it in `src/layouts/BaseLayout.astro`'s `<head>`:
+
+```html
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+```
+
+Verify it is emitted to `dist/favicon.svg` and that the link tag appears in the built HTML.
 
 Delete the old `assets/` directory once nothing references it:
 
@@ -1820,15 +1836,15 @@ Delete the old `assets/` directory once nothing references it:
 git rm -r --ignore-unmatch assets
 ```
 
-- [ ] **Step 4: Verify**
+- [ ] **Step 5: Verify**
 
 ```bash
-pnpm build && ls -la dist/og.png && grep -q "og:image" dist/index.html && echo "contact and card ready"
+pnpm build && ls -la dist/og.png dist/favicon.svg && grep -q "og:image" dist/index.html && echo "contact, card and favicon ready"
 ```
 
-Expected: `dist/og.png` exists, and `contact and card ready`.
+Expected: both `dist/og.png` and `dist/favicon.svg` exist, and `contact, card and favicon ready`.
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 6: Commit**
 
 ```bash
 git add -A
