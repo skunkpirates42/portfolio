@@ -1,0 +1,23 @@
+---
+const stats = [
+  { figure: "7+ years", detail: "building product-facing features at scale" },
+  { figure: "20,000+", detail: "merchants reached by the analytics surfaces I led" },
+  { figure: "$42B", detail: "GMV flowing through the platform" },
+  { figure: "5+ years", detail: "in a remote, distributed engineering org" },
+];
+---
+
+<section class="mx-auto max-w-5xl px-6 pb-20">
+  <dl
+    class="grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4"
+  >
+    {
+      stats.map((stat) => (
+        <div class="flex flex-col gap-2 bg-surface p-6">
+          <dt class="text-3xl font-semibold tracking-tight tabular-nums">{stat.figure}</dt>
+          <dd class="text-sm leading-relaxed text-muted">{stat.detail}</dd>
+        </div>
+      ))
+    }
+  </dl>
+</section>
