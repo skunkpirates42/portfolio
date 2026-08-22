@@ -3,7 +3,18 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const DIR = "src/content/case-studies";
-const REQUIRED = ["title", "role", "period", "summary", "stack", "order"];
+
+function readFrontmatter(file: string): Record<string, string> {
+  const raw = readFileSync(join(DIR, file), "utf8");
+  const match = raw.match(/^---\n([\s\S]*?)\n---/);
+  if (!match) throw new Error(`${file} has no frontmatter block`);
+  const fields: Record<string, string> = {};
+  for (const line of match[1].split("\n")) {
+    const kv = line.match(/^([a-zA-Z]+):\s*(.+)$/);
+    if (kv) fields[kv[1]] = kv[2].trim();
+  }
+  return fields;
+}
 
 describe("case study frontmatter", () => {
   const files = readdirSync(DIR).filter((f) => f.endsWith(".mdx"));
@@ -12,13 +23,24 @@ describe("case study frontmatter", () => {
     expect(files.length).toBeGreaterThanOrEqual(2);
   });
 
-  it.each(files)("%s declares every required field", (file) => {
-    const raw = readFileSync(join(DIR, file), "utf8");
-    const match = raw.match(/^---\n([\s\S]*?)\n---/);
-    expect(match).not.toBeNull();
-    const frontmatter = match![1];
-    for (const key of REQUIRED) {
-      expect(frontmatter).toContain(`${key}:`);
+  it.each(files)("%s has a valid schema", (file) => {
+    const fields = readFrontmatter(file);
+
+    for (const key of ["title", "role", "period", "summary"]) {
+      expect(fields[key], `${key} missing`).toBeDefined();
+      expect(fields[key].replace(/^"|"$/g, "").length).toBeGreaterThan(0);
     }
+
+    expect(fields.stack, "stack missing").toBeDefined();
+    expect(fields.stack.startsWith("["), "stack must be an array").toBe(true);
+    expect(fields.stack.replace(/[[\]"\s]/g, "").split(",").filter(Boolean).length).toBeGreaterThan(0);
+
+    expect(fields.order, "order missing").toBeDefined();
+    expect(Number.isInteger(Number(fields.order)), "order must be an integer").toBe(true);
+  });
+
+  it("gives every case study a unique order", () => {
+    const orders = files.map((f) => Number(readFrontmatter(f).order));
+    expect(new Set(orders).size).toBe(orders.length);
   });
 });
