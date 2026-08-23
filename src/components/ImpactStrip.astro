@@ -7,15 +7,19 @@ const stats = [
 ];
 ---
 
-<section class="mx-auto max-w-5xl px-6 pb-20">
-  <dl
-    class="grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4"
-  >
+<section class="mx-auto max-w-5xl px-6 pb-24">
+  <dl class="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
     {
       stats.map((stat) => (
-        <div class="flex flex-col gap-2 bg-surface p-6">
-          <dt class="text-3xl font-semibold tracking-tight tabular-nums">{stat.figure}</dt>
-          <dd class="text-sm leading-relaxed text-muted">{stat.detail}</dd>
+        <div class="relative flex flex-col gap-2 overflow-hidden rounded-2xl border border-line bg-gradient-to-b from-surface-2 to-surface p-6">
+          <span
+            class="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent"
+            aria-hidden="true"
+          />
+          <dt class="font-display text-3xl font-bold tracking-[-0.035em] tabular-nums">
+            {stat.figure}
+          </dt>
+          <dd class="text-[13px] leading-relaxed text-faint">{stat.detail}</dd>
         </div>
       ))
     }

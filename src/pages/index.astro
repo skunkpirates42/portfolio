@@ -22,7 +22,7 @@ const caseStudies = (await getCollection("case-studies")).sort(
   <Hero />
   <ImpactStrip />
   <section id="work" class="mx-auto max-w-5xl px-6 py-16">
-    <h2 class="text-sm font-semibold uppercase tracking-widest text-accent">Case studies</h2>
+    <h2 class="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">Case studies</h2>
     {caseStudies.map((entry) => <CaseStudy entry={entry} />)}
   </section>
   <AgenticSection />

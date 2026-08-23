@@ -4,17 +4,17 @@ import { projects } from "../data/projects";
 
 <section id="side-work" class="border-t border-line">
   <div class="mx-auto max-w-5xl px-6 py-16">
-    <h2 class="text-sm font-semibold uppercase tracking-widest text-accent">Side work</h2>
+    <h2 class="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">Side work</h2>
     <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted text-pretty">
       Things I built recently because I wanted to know how they would turn out.
     </p>
 
-    <ul class="mt-10 space-y-px overflow-hidden rounded-xl border border-line bg-line">
+    <ul class="mt-10 flex flex-col gap-3.5">
       {
         projects.map((project) => (
-          <li class="bg-surface p-6">
+          <li class="rounded-2xl border border-line bg-gradient-to-b from-surface-2 to-surface p-6">
             <div class="flex flex-wrap items-baseline justify-between gap-3">
-              <h3 class="font-mono text-lg font-semibold">
+              <h3 class="font-display text-lg font-semibold tracking-[-0.02em]">
                 {project.href ? (
                   <a href={project.href} class="hover:text-accent">
                     {project.name}
@@ -38,7 +38,7 @@ import { projects } from "../data/projects";
             </p>
             <ul class="mt-4 flex flex-wrap gap-2">
               {project.stack.map((item) => (
-                <li class="rounded-md bg-surface-2 px-2.5 py-1 text-xs font-medium text-muted">
+                <li class="rounded-lg border border-line bg-surface px-3 py-1.5 font-mono text-[11px] text-muted">
                   {item}
                 </li>
               ))}
