@@ -23,6 +23,14 @@ import { projects } from "../data/projects";
                   project.name
                 )}
               </h3>
+              {project.liveHref && (
+                <a
+                  href={project.liveHref}
+                  class="text-xs font-medium text-accent underline underline-offset-4 hover:text-ink"
+                >
+                  Live site
+                </a>
+              )}
               {project.note && <span class="text-xs text-faint">{project.note}</span>}
             </div>
             <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted text-pretty">

@@ -9,6 +9,7 @@
   --muted: #5A5D63;
   --faint: #62666E;
   --accent: #6F4FCC;
+  --available: #15803D;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +22,7 @@
     --muted: #9AA1AC;
     --faint: #8E96A2;
     --accent: #A78BFA;
+    --available: #4ADE80;
     color-scheme: dark;
   }
 }
@@ -34,6 +36,7 @@
   --muted: #9AA1AC;
   --faint: #8E96A2;
   --accent: #A78BFA;
+  --available: #4ADE80;
   color-scheme: dark;
 }
 
@@ -46,6 +49,7 @@
   --color-muted: var(--muted);
   --color-faint: var(--faint);
   --color-accent: var(--accent);
+  --color-available: var(--available);
 }
 
 html {

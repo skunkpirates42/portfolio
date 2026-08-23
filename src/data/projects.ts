@@ -3,6 +3,7 @@ export interface Project {
   blurb: string;
   stack: string[];
   href?: string;
+  liveHref?: string;
   note?: string;
 }
 
@@ -24,8 +25,9 @@ export const projects: Project[] = [
   {
     name: "wc-predictions",
     blurb:
-      "A World Cup prediction pool that scores itself. A Vercel function pulls results from ESPN and caches completed matches in Vercel KV, so a finished game is fetched once and never again \u2014 only dates still in play get re-polled. Both failure paths are handled rather than assumed away: with no cache it falls back to live ESPN, and if ESPN is unreachable it serves the cached finals instead of breaking. Standings and scoring are pure functions with unit tests.",
+      "A World Cup prediction pool built for colleagues at Recharge and extended round by round as the tournament ran. A Vercel function pulls results from ESPN and caches completed matches in Vercel KV, so a finished game is fetched once and never again \u2014 only dates still in play get re-polled. Both failure paths degrade rather than break: with no cache it falls back to live ESPN, and if ESPN is unreachable it serves the cached finals. The leaderboard, per-player comparison and analytics charts are hand-built with no UI dependencies, and the scoring and standings logic is pure and unit tested.",
     stack: ["React", "Vite", "Vercel", "Vercel KV", "ESPN API"],
     href: "https://github.com/skunkpirates42/wc-predictions",
+    liveHref: "https://wc-predictions-rho.vercel.app/",
   },
 ];
