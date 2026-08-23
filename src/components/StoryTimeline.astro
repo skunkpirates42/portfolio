@@ -4,7 +4,7 @@ import { chapters } from "../data/timeline";
 
 <section id="story" class="border-t border-line">
   <div class="mx-auto max-w-5xl px-6 py-16">
-    <h2 class="text-sm font-semibold uppercase tracking-widest text-accent">How I got here</h2>
+    <h2 class="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">How I got here</h2>
     <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted text-pretty">
       I did not take the direct route.
     </p>
@@ -14,11 +14,11 @@ import { chapters } from "../data/timeline";
         chapters.map((chapter) => (
           <li class="relative pb-12 last:pb-0" data-chapter>
             <span
-              class="absolute -left-[calc(2rem+5px)] top-2 h-2.5 w-2.5 rounded-full bg-accent sm:-left-[calc(3rem+5px)]"
+              class="absolute -left-[calc(2rem+5px)] top-2 h-2.5 w-2.5 rounded-full border border-accent bg-ground shadow-[0_0_0_4px_rgba(53,232,210,0.10)] sm:-left-[calc(3rem+5px)]"
               aria-hidden="true"
             />
-            <p class="text-sm font-medium tabular-nums text-faint">{chapter.period}</p>
-            <h3 class="mt-1 text-xl font-semibold tracking-tight">{chapter.title}</h3>
+            <p class="font-mono text-xs tracking-[0.08em] tabular-nums text-accent">{chapter.period}</p>
+            <h3 class="mt-1.5 text-xl font-semibold tracking-[-0.025em]">{chapter.title}</h3>
             <p class="mt-3 max-w-2xl leading-relaxed text-muted text-pretty">{chapter.body}</p>
           </li>
         ))

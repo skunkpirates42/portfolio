@@ -21,7 +21,7 @@ const practices = [
 
 <section id="agentic" class="border-t border-line">
   <div class="mx-auto max-w-5xl px-6 py-16">
-    <h2 class="text-sm font-semibold uppercase tracking-widest text-accent">
+    <h2 class="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">
       Agentic engineering
     </h2>
     <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted text-pretty">
@@ -30,11 +30,11 @@ const practices = [
       part. The discipline around them is.
     </p>
 
-    <div class="mt-10 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2">
+    <div class="mt-10 grid gap-3.5 sm:grid-cols-2">
       {
         practices.map((practice) => (
-          <div class="bg-surface p-6">
-            <h3 class="font-semibold">{practice.title}</h3>
+          <div class="rounded-2xl border border-line bg-gradient-to-b from-surface-2 to-surface p-6">
+            <h3 class="text-lg font-semibold tracking-[-0.02em]">{practice.title}</h3>
             <p class="mt-2 text-sm leading-relaxed text-muted">{practice.body}</p>
           </div>
         ))
