@@ -23,8 +23,9 @@ export const projects: Project[] = [
   },
   {
     name: "wc-predictions",
-    blurb: "A World Cup match prediction app.",
-    stack: ["JavaScript"],
+    blurb:
+      "A World Cup prediction pool that scores itself. A Vercel function pulls results from ESPN and caches completed matches in Vercel KV, so a finished game is fetched once and never again \u2014 only dates still in play get re-polled. Both failure paths are handled rather than assumed away: with no cache it falls back to live ESPN, and if ESPN is unreachable it serves the cached finals instead of breaking. Standings and scoring are pure functions with unit tests.",
+    stack: ["React", "Vite", "Vercel", "Vercel KV", "ESPN API"],
     href: "https://github.com/skunkpirates42/wc-predictions",
   },
 ];
