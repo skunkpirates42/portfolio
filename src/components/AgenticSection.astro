@@ -1,0 +1,48 @@
+---
+const practices = [
+  {
+    title: "Spec before code",
+    body: "Work starts as a written design and an implementation plan, reviewed before anything is generated. Ambiguity is cheaper to fix in a document than in a diff.",
+  },
+  {
+    title: "Context is the input",
+    body: "Project conventions, architecture and constraints live in files the agent reads every session, so output matches the codebase instead of a generic house style.",
+  },
+  {
+    title: "Small, verifiable units",
+    body: "Tasks are sized to one testable deliverable, each gated on tests that actually ran. Verification is the checkpoint, not the vibe.",
+  },
+  {
+    title: "Review is still mine",
+    body: "Generated code gets read line by line. The tooling changes how fast a first draft arrives, not who is accountable for what ships.",
+  },
+];
+---
+
+<section id="agentic" class="border-t border-line">
+  <div class="mx-auto max-w-5xl px-6 py-16">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-accent">
+      Agentic engineering
+    </h2>
+    <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted text-pretty">
+      I was an early adopter of agentic development workflows and have spent the last
+      stretch of my career building with them daily. The tools are not the interesting
+      part. The discipline around them is.
+    </p>
+
+    <div class="mt-10 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2">
+      {
+        practices.map((practice) => (
+          <div class="bg-surface p-6">
+            <h3 class="font-semibold">{practice.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{practice.body}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="mt-8 max-w-2xl text-sm leading-relaxed text-faint">
+      Day to day: Claude, Claude Code, Cursor and MCP servers.
+    </p>
+  </div>
+</section>
