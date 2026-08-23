@@ -10,7 +10,7 @@ function readFrontmatter(file: string): Record<string, string> {
   if (!match) throw new Error(`${file} has no frontmatter block`);
   const fields: Record<string, string> = {};
   for (const line of match[1].split("\n")) {
-    const kv = line.match(/^([a-zA-Z]+):\s*(.+)$/);
+    const kv = line.match(/^([\w-]+):\s*(.+)$/);
     if (kv) fields[kv[1]] = kv[2].trim();
   }
   return fields;
