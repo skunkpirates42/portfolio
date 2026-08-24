@@ -25,9 +25,9 @@ const caseStudies = (await getCollection("case-studies")).sort(
     <h2 class="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">Case studies</h2>
     {caseStudies.map((entry) => <CaseStudy entry={entry} />)}
   </section>
+  <ResumeSection />
+  <SelectedWork />
   <AgenticSection />
   <StoryTimeline />
-  <SelectedWork />
-  <ResumeSection />
   <Contact />
 </BaseLayout>
