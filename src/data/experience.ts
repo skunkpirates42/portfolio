@@ -13,8 +13,8 @@ export const roles: Role[] = [
     location: "Remote",
     period: "May 2023 - Aug 2026",
     points: [
-      "Led frontend development of the merchant analytics platform: dashboards and drill-down reports surfacing business metrics previously unavailable to 20,000+ merchants.",
-      "Primary frontend engineer on the custom analytics reports product through two architectural generations, from canned reports with pre-selected metrics and dimensions to fully customizable reports. Collaborated closely with backend and data engineers.",
+      "Built dashboards and custom reporting tools for the merchant analytics platform, serving 20,000+ merchants. As the team evolved, I became the platform's sole frontend developer.",
+      "Built the custom analytics reports product through two architectural generations, from canned reports with pre-selected metrics and dimensions to fully customizable reports. Collaborated closely with backend and data engineers.",
     ],
   },
   {

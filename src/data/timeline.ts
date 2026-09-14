@@ -40,6 +40,6 @@ export const chapters: Chapter[] = [
     period: "2021 - 2026",
     sortYear: 2021,
     title: "Recharge, Stay.AI, senior",
-    body: "Five years in remote, distributed engineering orgs. Frontend engineer at Recharge, a stint leading the customer portal rebuild at Stay.AI, then back to Recharge as a senior frontend engineer leading the merchant analytics platform.",
+    body: "Five years in remote, distributed engineering orgs. Frontend engineer at Recharge, a stint leading the customer portal rebuild at Stay.AI, then back to Recharge to build dashboards and custom reporting tools before becoming the merchant analytics platform's sole frontend developer.",
   },
 ];
