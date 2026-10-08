@@ -1,12 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#6F4FCC" />
+  <defs>
+    <linearGradient id="aperture" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#35E8D2" />
+      <stop offset="1" stop-color="#8B75FF" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="url(#aperture)" />
   <text
     x="16"
     y="23"
     text-anchor="middle"
     font-family="ui-sans-serif, system-ui, -apple-system, Helvetica, Arial, sans-serif"
-    font-weight="700"
+    font-weight="800"
     font-size="18"
-    fill="#FBFAF8"
+    fill="#05070D"
   >PR</text>
 </svg>
